@@ -1,10 +1,12 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from random import randint
 
+def root(request):
+    return HttpResponseRedirect('home')
 
-
-
+def gallery(request):
+    return HttpResponseRedirect('portfolio')
 
 def home_page(request):
     context = {'name': 'Vikil Naik'}

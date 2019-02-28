@@ -16,7 +16,7 @@ Including another URLconf
 
 from django.urls import path
 
-from my_first_web_app.views import home_page, portfolio_page, about_me_page, favourites_page
+from my_first_web_app.views import home_page, portfolio_page, about_me_page, favourites_page, root, gallery
 
 
 
@@ -26,5 +26,6 @@ urlpatterns = [
     path('portfolio', portfolio_page),
     path('about', about_me_page),
     path('fave_link', favourites_page),
-
+    path('', root),
+    path('gallery', gallery)
     ]
