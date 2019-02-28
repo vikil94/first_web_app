@@ -13,34 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.http import HttpResponse
+
 from django.urls import path
-from django.shortcuts import render
-from random import randint
+
+from my_first_web_app.views import home_page, portfolio_page, about_me_page, favourites_page
 
 
-def home_page(request):
-    context = {'name': 'Vikil Naik'}
-    response = render(request, 'index.html', context)
-    return HttpResponse(response)
 
-def portfolio_page(request):
-    image_urls = []
-    for i in range(5):
-        random_number = randint(0,100)
-        image_urls.append("https://picsum.photos/400/600/?image={}".format(random_number))
-    context = {'gallery_images': image_urls}
-    response = render(request, 'gallery.html', context)
-    return HttpResponse(response)
-
-def about_me_page(request):
-    context = {'skills': ['coding', 'writing', 'public speakiing'],
-                'interests': ['golf', 'liverpoolfc', 'Toronto Raptors']}
-    response = render(request, 'about_me.html', context)
-    return HttpResponse(response)
 
 urlpatterns = [
     path('home', home_page),
     path('portfolio', portfolio_page),
     path('about', about_me_page),
-]
+    path('fave_link', favourites_page),
+
+    ]
