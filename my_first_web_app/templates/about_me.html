@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>About me page</h1>
+    {% for i in skills %}
+      <ul>
+        <li>{{ i }}</li>
+      </ul>
+    {% endfor %}
+    {% for i in interests %}
+        <ul>
+          <li>{{ i }}</li>
+        </ul>
+    {% endfor %}
+  </body>
+</html>
